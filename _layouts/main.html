@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
 
-  <title>{{ site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="{{ '/assets/favicon/apple-touch-icon.png' | prepend: site.baseurl }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ '/assets/favicon/favicon-32x32.png' | prepend: site.baseurl }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ '/assets/favicon/favicon-16x16.png' | prepend: site.baseurl }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ '/assets/favicon/site.webmanifest' | prepend: site.baseurl }}"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ '/assets/favicon/apple-touch-icon.png' | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | prepend: site.baseurl }}">
-  <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | prepend: site.baseurl }}">
-  <meta name="theme-color" content="#ffffff">
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/main.min.css' | prepend: site.baseurl }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/vendors.min.css' | prepend: site.baseurl }}"
+    />
 
-  <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ '/assets/css/vendors.min.css' | prepend: site.baseurl }}">
+    <script src="{{ '/assets/js/vendors.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/assets/js/app.min.js' | prepend: site.baseurl }}"></script>
+  </head>
 
-  <script src="{{ '/assets/js/vendors.min.js' | prepend: site.baseurl }}"></script>
-  <script src="{{ '/assets/js/app.min.js' | prepend: site.baseurl }}"></script>
-</head>
-
-<body>
-  <div id="preloader">
-    <div class="load">
-      <hr/>
-      <hr/>
-      <hr/>
-      <hr/>
+  <body>
+    <div id="preloader">
+      <div class="load">
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+      </div>
     </div>
-  </div>
-  {% include landing-page.html %}
-  <div class="layout">
-    {%if site.show_aboutme_card %}
+    {% include landing-page.html %}
+    <div class="layout">
+      {%if site.show_aboutme_card %}
       <section class="card neumorphism-card-big">
         {% include section-aboutme.html %}
       </section>
-    {% endif %}
-    {%if site.show_timeline_card %}
+      {% endif %} {%if site.show_timeline_card %}
       <section class="card neumorphism-card-big">
         {% include section-timeline.html %}
       </section>
-    {% endif %}
-    {%if site.show_projects_card %}
+      {% endif %} {%if site.show_projects_card %}
       <section class="card neumorphism-card-big">
         {% include section-projects.html %}
       </section>
-    {% endif %}
-    {%if site.show_skills_card %}
-    <section class="card neumorphism-card-big">
-      {% include section-skills.html %}
-    </section>
-    {% endif %}
-    {%if site.show_contact_card %}
-    <section class="card neumorphism-card-big">
-      {% include section-contact.html %}
-    </section>
-    {% endif %}
-  </div>
-  {% include footer.html %}
-</body>
+      {% endif %} {%if site.show_skills_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-skills.html %}
+      </section>
+      {% endif %} {%if site.show_contact_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-contact.html %}
+      </section>
+      {% endif %}
+    </div>
+    {% include footer.html %}
+  </body>
 </html>

@@ -38,7 +38,7 @@ github_pages:
   - sorting_algos
   - character_encoder
   - insolitum.github.io
-  
+
 projects:
   sort_by: stars
   exclude:
